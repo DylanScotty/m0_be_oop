@@ -103,7 +103,3 @@ end
 
 hobbit1 = Hobbit.new("Sam", "Brave")
 hobbit2 = Hobbit.new("Frodo", "Sad")
-p hobbit1
-p hobbit2
-hobbit1.celebrate_birthday
-p hobbit1
