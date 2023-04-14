@@ -3,19 +3,22 @@
 # it should have a color attribute, that is silver by default
 # it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
 class Unicorn
-    def initialize(name, say)
+    attr_reader :name, :color
+    def initialize(name, color = 'silver')
         @name = name
         @color = "silver"
-        @say = say
+    end
+    def say(statement)
+        "*~* #{statement} *~*"
     end
 end
 
 
-unicorn1 = Unicorn.new("Bobby", "*~* Check me out mom *~*")
+unicorn1 = Unicorn.new("Bobby")
 
 p unicorn1
 
-
+p unicorn1.say "Look at me"
 
 #  Write a class called Vampire
 #  it should have a dynamic name attribute
@@ -23,6 +26,7 @@ p unicorn1
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 class Vampire
+    attr_reader :name, :pet, :thirsty
     def initialize(name, pet="bat", thirsty=true)
         @name = name
         @pet = pet
@@ -48,6 +52,7 @@ p vampire2
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 class Dragon
+    attr_reader :name, :rider, :color
     def initialize(name, rider, color)
         @name = name
         @rider = rider
@@ -82,13 +87,13 @@ p dragon1
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
 class Hobbit
+    attr_reader :name, :disposition
     def initialize(name, disposition)
         @name = name
         @disposition = disposition
         @age = 0
         @is_adult = false
         @is_old = false
-        @has_ring = name == "Frodo"
     end
     def celebrate_birthday
         @age += 1
@@ -99,6 +104,9 @@ class Hobbit
             @is_old = true
         end
     end
+    def has_ring?
+        @name == 'Frodo'
+    end
 end
 
 hobbit1 = Hobbit.new("Sam", "Brave")
@@ -108,3 +116,4 @@ hobbit1.celebrate_birthday
     hobbit1.celebrate_birthday
 end
 p hobbit1
+p hobbit2
