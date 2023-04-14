@@ -117,3 +117,5 @@ hobbit1.celebrate_birthday
 end
 p hobbit1
 p hobbit2
+p hobbit1.has_ring?
+p hobbit2.has_ring?
