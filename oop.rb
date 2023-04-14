@@ -103,3 +103,8 @@ end
 
 hobbit1 = Hobbit.new("Sam", "Brave")
 hobbit2 = Hobbit.new("Frodo", "Sad")
+hobbit1.celebrate_birthday
+33.times do 
+    hobbit1.celebrate_birthday
+end
+p hobbit1
