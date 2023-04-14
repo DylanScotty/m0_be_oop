@@ -52,7 +52,7 @@ p vampire2
 #  it should have a is_hungry attribute that is true by default
 #  it should have a eat method. If the dragon eats 4 times, it is no longer hungry
 class Dragon
-    attr_reader :name, :rider, :color
+    attr_reader :name, :rider, :color, :is_hungry, :food
     def initialize(name, rider, color)
         @name = name
         @rider = rider
@@ -87,7 +87,7 @@ p dragon1
 #  it should have an is_old attribute that defaults to false. once a Hobbit is 101, it is old.
 #  it should have a has_ring attribute. If the Hobbit's name is "Frodo", true, if not, false.
 class Hobbit
-    attr_reader :name, :disposition
+    attr_reader :name, :disposition, :age, :is_adult, :is_old
     def initialize(name, disposition)
         @name = name
         @disposition = disposition
